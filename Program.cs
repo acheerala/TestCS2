@@ -7,11 +7,14 @@ namespace TestCS
     {
         public static void Main(string[] args)
         {
+            CheckLanguageGrammer();
+        }
+
+        private static void CheckLanguageGrammer()
+        {
             string str1 = "name { fdf [ dfd ( fdf ) fdfd ] dfdf}";   // Valid
             string str2 = "{xyz}";                // Valid
             string str3 = "abc [ fdfd ] fdfd ( fdfd )  dfdf {}";     // Valid
-
-
             string str4 = "name { fdfd [fdfd }";                     // Invalid
             string str5 = "xyc { [ ( fdf";                           // Invalid
             string str6 = "xyc { [ ( fdf  { ) ]"; //invalid
@@ -32,7 +35,7 @@ namespace TestCS
             notMatched = ProcessString(str7);
             Console.WriteLine($"{str7} - Matched {!notMatched}");
         }
-         
+
         private static bool ProcessString(string s)
         {
             Stack<char> stack = new Stack<char>();
