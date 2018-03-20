@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Linq;
+using System.Text;
+
 namespace TestCS
 {
     public interface Identity
